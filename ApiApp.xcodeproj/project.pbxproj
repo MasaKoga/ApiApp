@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D2D0EEB0E0DABDAC75BC3EA /* Pods_ApiApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA16E0FEB3B422D6CDD9B12 /* Pods_ApiApp.framework */; };
+		D3ACE93B2D9123BE00A5AB75 /* ApiKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3ACE93A2D9123BE00A5AB75 /* ApiKey.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -15,6 +16,7 @@
 		35E531343025609BEF152435 /* Pods-ApiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiApp.release.xcconfig"; path = "Target Support Files/Pods-ApiApp/Pods-ApiApp.release.xcconfig"; sourceTree = "<group>"; };
 		A955FA68E2554BBF59E03EFA /* Pods-ApiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiApp.debug.xcconfig"; path = "Target Support Files/Pods-ApiApp/Pods-ApiApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D3AACACE2D9100760075CD18 /* ApiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3ACE93A2D9123BE00A5AB75 /* ApiKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKey.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -61,6 +63,7 @@
 		D3AACAC52D9100760075CD18 = {
 			isa = PBXGroup;
 			children = (
+				D3ACE93A2D9123BE00A5AB75 /* ApiKey.plist */,
 				D3AACAD02D9100760075CD18 /* ApiApp */,
 				D3AACACF2D9100760075CD18 /* Products */,
 				EC7E0D1E9CD83E57B3F5076A /* Pods */,
@@ -149,6 +152,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3ACE93B2D9123BE00A5AB75 /* ApiKey.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
