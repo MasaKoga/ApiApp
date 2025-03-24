@@ -16,6 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tYb-ft-aeM">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="読み込み中..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxs-UP-k5J">
                                 <rect key="frame" x="149.66666666666666" y="415.66666666666669" width="94" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -26,12 +30,17 @@
                         <viewLayoutGuide key="safeArea" id="BRg-O9-HR0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="BRg-O9-HR0" firstAttribute="trailing" secondItem="tYb-ft-aeM" secondAttribute="trailing" id="7iq-Zb-w3l"/>
+                            <constraint firstItem="BRg-O9-HR0" firstAttribute="bottom" secondItem="tYb-ft-aeM" secondAttribute="bottom" id="Amm-Zl-rgD"/>
                             <constraint firstItem="wxs-UP-k5J" firstAttribute="centerX" secondItem="EV2-eZ-C6Q" secondAttribute="centerX" id="Nd4-8n-lIN"/>
                             <constraint firstItem="wxs-UP-k5J" firstAttribute="centerY" secondItem="EV2-eZ-C6Q" secondAttribute="centerY" id="dLB-46-GwS"/>
+                            <constraint firstItem="tYb-ft-aeM" firstAttribute="top" secondItem="BRg-O9-HR0" secondAttribute="top" id="hHt-Iz-0G0"/>
+                            <constraint firstItem="tYb-ft-aeM" firstAttribute="leading" secondItem="BRg-O9-HR0" secondAttribute="leading" id="pD1-UI-Ufd"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="statusLabel" destination="wxs-UP-k5J" id="JRA-KR-Qg3"/>
+                        <outlet property="tableView" destination="tYb-ft-aeM" id="D4a-oG-Pe8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YSD-C0-y1x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

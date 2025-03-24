@@ -12,6 +12,9 @@ class ApiViewController: UIViewController {
     //データ読み込み時のインジケーターとして使用するラベル。
     @IBOutlet weak var statusLabel: UILabel!
 
+    //リスト表示用のTableView
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
