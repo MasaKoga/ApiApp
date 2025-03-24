@@ -9,6 +9,8 @@ import UIKit
 
 class ApiViewController: UIViewController {
 
+    @IBAction func tapFavoriteButton(_ sender: UIButton) {
+    }
     //データ読み込み時のインジケーターとして使用するラベル。
     @IBOutlet weak var statusLabel: UILabel!
 
