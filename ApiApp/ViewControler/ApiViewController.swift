@@ -38,11 +38,25 @@ class ApiViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let filePath = Bundle.main.path(forResource: "ApiKey", ofType:"plist" )
         let plist = NSDictionary(contentsOfFile: filePath!)!
         apiKey = plist["key"] as! String
+        
+        // ここから
+        // RefreshControlの設定
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+        // ここまで追加
 
         // shopArray読み込み
         updateShopArray()
         // ここまで追加
     }
+    
+    // ここから
+    @objc func refresh() {
+        // shopArray再読み込み
+        updateShopArray()
+    }
+    // ここまで追加
     
     // ここから
     func updateShopArray() {
@@ -53,21 +67,32 @@ class ApiViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 "keyword": "ランチ",
                 "format": "json"
             ]
-        AF.request("https://webservice.recruit.co.jp/hotpepper/gourmet/v1/", method: .get, parameters: parameters).responseDecodable(of: ApiResponse.self) { response in
-    
-        // レスポンス受信処理
-        switch response.result {
-        case .success(let apiResponse):
-            print("受信データ: \(apiResponse)")
-            self.shopArray = apiResponse.results.shop
-            self.statusLabel.text = ""
-        case .failure(let error):
-            print(error)
-            self.shopArray = []
-            self.statusLabel.text = "データの取得が失敗しました"
-        }
-        self.tableView.reloadData()
-        }
+        AF.request("https://webservice.recruit.co.jp/hotpepper/gourmet/v1/",
+                   method: .get,
+                   parameters: parameters).responseDecodable(of: ApiResponse.self)
+                    {
+                        response in
+                        
+                        // ここから記述がないとクルクルが止まらない。
+                        // リフレッシュ表示動作停止
+                        if self.tableView.refreshControl!.isRefreshing {
+                            self.tableView.refreshControl!.endRefreshing()
+                        }
+                        // ここまで追加
+                        
+                        // レスポンス受信処理
+                        switch response.result {
+                        case .success(let apiResponse):
+                            print("受信データ: \(apiResponse)")
+                            self.shopArray = apiResponse.results.shop
+                            self.statusLabel.text = ""
+                        case .failure(let error):
+                            print(error)
+                            self.shopArray = []
+                            self.statusLabel.text = "データの取得が失敗しました"
+                        }
+                        self.tableView.reloadData()
+                    }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
