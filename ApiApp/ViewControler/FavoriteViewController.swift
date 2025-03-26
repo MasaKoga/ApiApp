@@ -9,6 +9,13 @@ import UIKit
 
 class FavoriteViewController: UIViewController {
 
+    
+    //お気に入りボタンと紐付いたAction
+    @IBAction func tapFavoriteButton(_ sender: UIButton) {
+    }
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

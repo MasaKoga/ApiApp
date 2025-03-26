@@ -113,6 +113,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hG4-b0-wXg">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="FA2-MS-Pqh" customClass="ShopCell" customModule="ApiApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="44.333332061767578"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FA2-MS-Pqh" id="LYv-5r-BuG">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="44.333332061767578"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YNr-XU-w88">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44.333333333333336"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="chn-e0-G9a"/>
+                                                        <constraint firstAttribute="height" priority="750" constant="44" id="lUr-TL-dqa"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WrV-4n-VFo">
+                                                    <rect key="frame" x="52" y="7.3333333333333321" width="283" height="29.999999999999996"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="dI4-46-1uf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5CT-8k-pCF">
+                                                    <rect key="frame" x="343" y="7.3333333333333321" width="30" height="29.999999999999996"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="Qpl-Nr-CZG"/>
+                                                        <constraint firstAttribute="height" constant="30" id="VWt-t4-KXI"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal">
+                                                        <imageReference key="image" image="star.fill" catalog="system" renderingMode="original"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="tapFavoriteButton:" destination="eJZ-sF-qKn" eventType="touchUpInside" id="6eB-DY-ZFd"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WrV-4n-VFo" firstAttribute="leading" secondItem="YNr-XU-w88" secondAttribute="trailing" constant="8" id="6ed-z9-Hgn"/>
+                                                <constraint firstItem="WrV-4n-VFo" firstAttribute="centerY" secondItem="LYv-5r-BuG" secondAttribute="centerY" id="PCe-cm-L7O"/>
+                                                <constraint firstItem="5CT-8k-pCF" firstAttribute="leading" secondItem="WrV-4n-VFo" secondAttribute="trailing" constant="8" id="RZ1-co-Mqx"/>
+                                                <constraint firstItem="YNr-XU-w88" firstAttribute="leading" secondItem="LYv-5r-BuG" secondAttribute="leading" id="a7d-yx-rDf"/>
+                                                <constraint firstAttribute="bottom" secondItem="YNr-XU-w88" secondAttribute="bottom" id="bjU-B0-OHj"/>
+                                                <constraint firstItem="YNr-XU-w88" firstAttribute="top" secondItem="LYv-5r-BuG" secondAttribute="top" id="fDO-fE-GSg"/>
+                                                <constraint firstItem="5CT-8k-pCF" firstAttribute="centerY" secondItem="LYv-5r-BuG" secondAttribute="centerY" id="l9h-7G-eqH"/>
+                                                <constraint firstAttribute="trailing" secondItem="5CT-8k-pCF" secondAttribute="trailing" constant="20" id="yyT-Z8-ZaN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="favoriteButton" destination="5CT-8k-pCF" id="Ann-vl-Boj"/>
+                                            <outlet property="logoImageView" destination="YNr-XU-w88" id="vQA-If-hzG"/>
+                                            <outlet property="shopNameLabel" destination="WrV-4n-VFo" id="von-CB-buu"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="お気に入りはまだ登録されていません" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gT-Xs-0Sg">
                                 <rect key="frame" x="61" y="415.66666666666669" width="271" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -124,8 +185,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4gT-Xs-0Sg" firstAttribute="centerY" secondItem="eJZ-sF-qKn" secondAttribute="centerY" id="LIL-7l-lL1"/>
+                            <constraint firstItem="hG4-b0-wXg" firstAttribute="top" secondItem="b4o-PV-6bO" secondAttribute="top" id="UDm-aL-rBE"/>
+                            <constraint firstItem="b4o-PV-6bO" firstAttribute="trailing" secondItem="hG4-b0-wXg" secondAttribute="trailing" id="WMl-ae-PlZ"/>
+                            <constraint firstItem="hG4-b0-wXg" firstAttribute="leading" secondItem="b4o-PV-6bO" secondAttribute="leading" id="bcg-Ql-gOn"/>
                             <constraint firstItem="4gT-Xs-0Sg" firstAttribute="centerX" secondItem="eJZ-sF-qKn" secondAttribute="centerX" id="eHa-uF-QK5"/>
+                            <constraint firstItem="b4o-PV-6bO" firstAttribute="bottom" secondItem="hG4-b0-wXg" secondAttribute="bottom" id="fAr-N7-p8y"/>
                         </constraints>
+                        <connections>
+                            <outlet property="tableView" destination="hG4-b0-wXg" id="IGS-xS-0a7"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oax-IO-xsi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -150,6 +218,7 @@
     </scenes>
     <resources>
         <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
