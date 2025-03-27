@@ -109,7 +109,7 @@
         <scene sceneID="2bA-zl-jfb">
             <objects>
                 <viewController storyboardIdentifier="FavoriteViewController" title="お気に入り" id="rRD-Jw-efg" customClass="FavoriteViewController" customModule="ApiApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eJZ-sF-qKn" customClass="FavoriteViewController">
+                    <view key="view" contentMode="scaleToFill" id="eJZ-sF-qKn">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -151,7 +151,7 @@
                                                         <imageReference key="image" image="star.fill" catalog="system" renderingMode="original"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="tapFavoriteButton:" destination="eJZ-sF-qKn" eventType="touchUpInside" id="6eB-DY-ZFd"/>
+                                                        <action selector="Action:" destination="rRD-Jw-efg" eventType="touchUpInside" id="rBM-yw-Cqu"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -191,10 +191,11 @@
                             <constraint firstItem="4gT-Xs-0Sg" firstAttribute="centerX" secondItem="eJZ-sF-qKn" secondAttribute="centerX" id="eHa-uF-QK5"/>
                             <constraint firstItem="b4o-PV-6bO" firstAttribute="bottom" secondItem="hG4-b0-wXg" secondAttribute="bottom" id="fAr-N7-p8y"/>
                         </constraints>
-                        <connections>
-                            <outlet property="tableView" destination="hG4-b0-wXg" id="IGS-xS-0a7"/>
-                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="statusLabel" destination="4gT-Xs-0Sg" id="sqp-66-7cB"/>
+                        <outlet property="tableView" destination="hG4-b0-wXg" id="6bl-az-Nhp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oax-IO-xsi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

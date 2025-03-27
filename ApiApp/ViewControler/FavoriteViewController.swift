@@ -11,8 +11,10 @@ class FavoriteViewController: UIViewController {
 
     
     //お気に入りボタンと紐付いたAction
-    @IBAction func tapFavoriteButton(_ sender: UIButton) {
+    @IBAction func Action(_ sender: UIButton) {
     }
+    
+    @IBOutlet weak var statusLabel: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
     
